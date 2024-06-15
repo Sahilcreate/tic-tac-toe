@@ -1,7 +1,7 @@
 # Tic-Tac-Toe
 
 ## Live Demo
-[See the live project here]()
+[See the live project here](https://sahilcreate.github.io/tic-tac-toe/)
 
 ## Provided Assests
 * [Building a house from the inside out](https://www.ayweb.dev/blog/building-a-house-from-the-inside-out)
