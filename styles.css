@@ -1,0 +1,354 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/*
+~~~~~~~~~~~~
+    MY CODE
+~~~~~~~~~~~~
+*/
+
+@font-face {
+    font-family: 'buba_demooutline';
+    src: url('fonts/bubademo-outline-webfont.woff2') format('woff2'),
+         url('fonts/bubademo-outline-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'buba_demoshadow';
+    src: url('fonts/bubademo-shadow-webfont.woff2') format('woff2'),
+         url('fonts/bubademo-shadow-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+:root {
+    --backgroundColor: rgb(246 246 246);
+    --focusColor: rgb(225 225 225);
+    --black: rgb(0 0 0);
+    --white: rgb(255 255 255);
+
+    font-family: 'buba_demooutline';
+    font-size: 20px;
+}
+
+input,
+button,
+select {
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font: inherit;
+}
+
+.body-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+   
+
+    background-color: var(--backgroundColor);
+
+    
+}
+
+
+/*
+~~~~~~~~~~~
+    HEADER
+~~~~~~~~~~~
+*/
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 20px 0;
+    background-color: var(--white);
+}
+
+.logo {
+    font-size: 40px;
+}
+
+.logo span {
+    font-family: 'buba_demoshadow';
+}
+
+.header button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--backgroundColor);
+}
+
+
+
+/*
+~~~~~~~~~
+    MAIN
+~~~~~~~~~
+*/
+
+.main {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 0 2px 5px -4px inset var(--black);
+    padding-top: 30px;
+}
+
+.turn-text {
+    width: 400px;
+    height: 60px;
+    font-size: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+    PLAYGROUND
+*/
+
+.playground {
+    width: max-content;
+    font-size: 80px;
+
+    padding-top: 30px;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border-bottom: 8px solid var(--focusColor);
+    border-right: 8px solid var(--focusColor);
+    border-style: double;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row .cell:last-of-type {
+    border-right: none;
+}
+
+.third-row .cell {
+    border-bottom: none;
+}
+
+
+/*
+~~~~~~~~~~~
+    FOOTER
+~~~~~~~~~~~
+*/
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px 0;
+    font-size: 22px;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    NAME COLLECTOR & GAME END DIALOG BOX
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+.dialog-box {
+    border: none;
+    border-radius: 12px;
+    background-color: var(--backgroundColor);
+}
+
+::backdrop {
+    backdrop-filter: blur(4px);
+}
+
+.name-collector button,
+.game-end-button-group button {
+    border: none;
+    border-radius: 8px;
+    padding: 15px 40px;
+}
+
+
+/*
+    NAME-COLLECTOR
+*/
+
+.name-collector p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding-bottom: 20px;
+}
+
+.name-collector input {
+    border: 1px solid var(--focusColor);
+    border-radius: 8px;
+    background-color: var(--white);
+    padding: 8px 20px;
+}
+
+.name-collector  p:last-of-type{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/*
+    GAME-END
+*/
+
+.game-end p {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.game-end-button-group {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+
+/*
+~~~~~~~~~~~~~~~~~~~~~
+    USER INTERACTION
+~~~~~~~~~~~~~~~~~~~~~
+*/
+a{
+    columns: var(--black);
+}
+
+a:hover {
+    font-family: 'buba_demoshadow';
+}
+
+a:visited {
+    color: purple;
+}
+
+.unfilled-cell,
+.name-collector button,
+.header button,
+.game-end-button-group button {
+    cursor: pointer;
+}
+
+.hovered-cell {
+    color: var(--focusColor);
+}
+
+.filled-cell {
+    color: var(--black);
+}
+
+.winner-cell {
+    font-family: 'buba_demoshadow';
+}
+
+.name-collector input:hover,
+.name-collector input:focus {
+    border-color: var(--black);
+}
+
+.name-collector button:hover,
+.name-collector button:focus,
+.header button:hover,
+.header button:focus,
+.game-end-button-group button:hover {
+    background-color: var(--focusColor);
+}
+
+.header button:active,
+.game-end-button-group button:active {
+    background-color: var(--white);
+}
+
+.name-collector button:active {
+    background-color: var(--backgroundColor);
+}
